@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Barra lateral com botões de ação -->
+        <button class="sidebar-btn" data-modal="modalAdicionar">Adicionar Item</button>
+        <button class="sidebar-btn" data-modal="modalEntrada">Registrar Entrada</button>
+        <button class="sidebar-btn" data-modal="modalSaida">Registrar Saída</button>
+    </div>
+
+    <div class="main-content">
+        <!-- Filtros de pesquisa -->
+        <section class="filtros">
+            <input type="text" id="pesquisa" placeholder="Pesquisar por material..." />
+        </section>
+
+        <!-- Tabela de Estoque -->
+        <section class="estoque-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                        <th>Entrada de Dados</th>
+                        <th>Quantidade Entrada</th>
+                        <th>Saída de Dados</th>
+                        <th>Quantidade de Saída</th>
+                        <th>Ações</th> <!-- Coluna de ações (Editar/Excluir) -->
+                    </tr>
+                </thead>
+                <tbody id="tabela-estoque">
+                    <!-- Itens serão carregados dinamicamente aqui -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Modal de Adicionar Item -->
+    <div id="modalAdicionar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modalAdicionar')">&times;</span>
+            <h2>Adicionar Item</h2>
+            <form id="formAdicionar">
+                <label for="material">Material:</label>
+                <input type="text" id="material" required>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" required>
+
+                <label for="quantidadeEntrada">Quantidade Entrada:</label>
+                <input type="number" id="quantidadeEntrada">
+
+                <label for="quantidadeSaida">Quantidade Saída:</label>
+                <input type="number" id="quantidadeSaida">
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Entrada -->
+    <div id="modalEntrada" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modalEntrada')">&times;</span>
+            <h2>Registrar Entrada</h2>
+            <form id="formEntrada">
+                <label for="materialEntrada">Material:</label>
+                <input type="text" id="materialEntrada" required>
+
+                <label for="quantidadeEntrada">Quantidade Entrada:</label>
+                <input type="number" id="quantidadeEntrada" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Saída -->
+    <div id="modalSaida" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modalSaida')">&times;</span>
+            <h2>Registrar Saída</h2>
+            <form id="formSaida">
+                <label for="materialSaida">Material:</label>
+                <input type="text" id="materialSaida" required>
+
+                <label for="quantidadeSaida">Quantidade Saída:</label>
+                <input type="number" id="quantidadeSaida" required>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal('modalEditar')">&times;</span>
+            <h2>Editar Item</h2>
+            <form id="formEditar">
+                <label for="materialEditar">Material:</label>
+                <input type="text" id="materialEditar" required>
+
+                <label for="quantidadeEditar">Quantidade:</label>
+                <input type="number" id="quantidadeEditar" required>
+
+                <label for="quantidadeEntradaEditar">Quantidade Entrada:</label>
+                <input type="number" id="quantidadeEntradaEditar">
+
+                <label for="quantidadeSaidaEditar">Quantidade Saída:</label>
+                <input type="number" id="quantidadeSaidaEditar">
+
+                <button type="submit">Alterar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
