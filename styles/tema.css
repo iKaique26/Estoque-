@@ -1,0 +1,75 @@
+/* Tema Escuro */
+body.tema-escuro {
+    --cor-secundaria: #1E1E1E; /* Preto suave */
+    --cor-fundo: #121212; /* Preto profundo */
+    --cor-texto: #E0E0E0; /* Cinza claro */
+    --cor-borda: #444444; /* Cinza médio */
+}
+
+/* Ajustes específicos para o tema escuro */
+body.tema-escuro .main-content {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+body.tema-escuro .sidebar {
+    background-color: #2A2A2A; /* Cinza escuro */
+    color: var(--cor-texto);
+}
+
+body.tema-escuro .estoque-table {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+body.tema-escuro table th {
+    background-color: var(--cor-primaria); /* Laranja vibrante */
+    color: var(--cor-texto);
+}
+
+body.tema-escuro table tr:nth-child(even) {
+    background-color: #3C3C3C; /* Cinza mais escuro */
+}
+
+body.tema-escuro table tr:hover {
+    background-color: #4C4C4C; /* Cinza mais claro */
+}
+
+body.tema-escuro .modal-content {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+body.tema-escuro .btn-cancelar {
+    background-color: #444; /* Cinza escuro */
+    color: var(--cor-texto);
+}
+
+body.tema-escuro .btn-cancelar:hover {
+    background-color: #666; /* Cinza mais claro */
+}
+
+body.tema-escuro .notificacoes-container {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border-color: var(--cor-borda);
+}
+
+body.tema-escuro .notificacoes-container li {
+    background-color: #2A2A2A; /* Cinza escuro */
+    color: var(--cor-texto);
+    border-color: var(--cor-borda);
+}
+
+body.tema-escuro .notificacoes-container li:hover {
+    background-color: #3C3C3C; /* Cinza mais escuro */
+}
+
+body.tema-escuro .mensagem {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+body.tema-escuro .mensagem.erro {
+    background-color: var(--cor-perigo); /* Vermelho */
+}

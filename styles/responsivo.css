@@ -1,0 +1,113 @@
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        transform: translateX(0); /* Sempre visível em telas pequenas */
+    }
+
+    .sidebar.active ~ .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        right: 10px; /* Posicionado dentro da sidebar em telas pequenas */
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    /* Cabeçalho */
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header input[type="text"] {
+        width: 100%;
+    }
+
+    /* Modais */
+    .modal-content {
+        width: 90%;
+    }
+
+    /* Botões da sidebar */
+    .sidebar-btn {
+        font-size: 0.9rem;
+    }
+
+    /* Tabela de estoque */
+    .estoque-table {
+        padding: 10px;
+    }
+
+    .estoque-table th,
+    .estoque-table td {
+        padding: 8px;
+    }
+
+    /* Botões de ação na tabela */
+    .btn-editar,
+    .btn-remover {
+        font-size: 1rem;
+    }
+
+    /* Notificações */
+    .notificacoes-container {
+        width: 90%;
+        right: 5%;
+        bottom: 70px;
+    }
+}
+
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+    /* Sidebar */
+    .sidebar {
+        padding: 5px;
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+        padding: 5px;
+    }
+
+    /* Modais */
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-content button {
+        padding: 10px;
+    }
+
+    /* Tabela de estoque */
+    .estoque-table {
+        padding: 5px;
+    }
+
+    .estoque-table th,
+    .estoque-table td {
+        padding: 6px;
+    }
+
+    /* Botões de ação na tabela */
+    .btn-editar,
+    .btn-remover {
+        font-size: 0.9rem;
+    }
+
+    /* Notificações */
+    .notificacoes-container {
+        width: 100%;
+        right: 0;
+        bottom: 60px;
+    }
+}

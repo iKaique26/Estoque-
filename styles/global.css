@@ -1,0 +1,71 @@
+/* Variáveis CSS */
+:root {
+    --cor-primaria: #FF6F3D; /* Laranja vibrante */
+    --cor-secundaria: #2A2A2A; /* Cinza escuro */
+    --cor-perigo: #E74C3C; /* Vermelho */
+    --cor-sucesso: #2ECC71; /* Verde */
+    --cor-fundo: #F5F5F5; /* Cinza claro */
+    --cor-texto: #333333; /* Cinza escuro */
+    --cor-borda: #DAD3BE; /* Bege claro */
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --raio-borda: 8px;
+    --transicao: all 0.3s ease;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos globais do body */
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #E65A2B; /* Laranja mais escuro */
+}
+
+/* Botões globais */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: var(--transicao);
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Transições suaves */
+.transition {
+    transition: var(--transicao);
+}

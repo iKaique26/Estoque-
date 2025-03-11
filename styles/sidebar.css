@@ -1,0 +1,102 @@
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Largura da sidebar */
+    background: linear-gradient(145deg, var(--cor-secundaria), #1E1E1E);
+    color: #fff;
+    padding: 20px;
+    height: 100vh; /* Altura total da tela */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Escondida por padrão */
+    z-index: 999; /* Acima de outros elementos */
+}
+
+/* Sidebar visível */
+.sidebar.active {
+    transform: translateX(0); /* Mostra a sidebar */
+}
+
+/* Botão de toggle (expandir/recolher) */
+.sidebar-toggle {
+    background-color: var(--cor-primaria); /* Laranja vibrante */
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: -50px; /* Posicionado fora da sidebar */
+    top: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito hover no botão de toggle */
+.sidebar-toggle:hover {
+    background-color: #E65A2B; /* Laranja mais escuro */
+    transform: scale(1.1); /* Aumenta ligeiramente */
+}
+
+/* Botões da sidebar */
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: var(--raio-borda);
+}
+
+/* Efeito hover nos botões da sidebar */
+.sidebar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    transform: translateX(5px); /* Desliza para a direita */
+}
+
+/* Ícones dentro dos botões da sidebar */
+.sidebar-btn i {
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover nos ícones */
+.sidebar-btn:hover i {
+    color: var(--cor-primaria); /* Laranja vibrante */
+}
+
+/* Overlay (fundo escuro quando a sidebar está aberta) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998; /* Abaixo da sidebar */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Overlay visível */
+.overlay.active {
+    display: block;
+    opacity: 1;
+}

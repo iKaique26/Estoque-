@@ -4,123 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Sistema de controle de estoque para gerenciar materiais, entradas e saídas.">
+    
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/main-content.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/notificacoes.css">
+    <link rel="stylesheet" href="styles/tema.css">
+    <link rel="stylesheet" href="styles/responsivo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div class="sidebar">
-        <!-- Barra lateral com botões de ação -->
-        <button class="sidebar-btn" data-modal="modalAdicionar">Adicionar Item</button>
-        <button class="sidebar-btn" data-modal="modalEntrada">Registrar Entrada</button>
-        <button class="sidebar-btn" data-modal="modalSaida">Registrar Saída</button>
-    </div>
+    <div class="overlay"></div>
+    <!-- Sidebar para ações de gerenciamento -->
+    <aside class="sidebar">
+        <button id="toggleSidebar" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h2>Gerenciar Estoque</h2>
+        <nav>
+            <ul>
+                <li>
+                    <button class="sidebar-btn" data-modal="modalAdicionar" aria-label="Adicionar Item">
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                        <span class="sidebar-text">Adicionar Item</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="sidebar-btn" data-modal="modalEntrada" aria-label="Registrar Entrada">
+                        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        <span class="sidebar-text">Registrar Entrada</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="sidebar-btn" data-modal="modalSaida" aria-label="Registrar Saída">
+                        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                        <span class="sidebar-text">Registrar Saída</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btnHistorico" class="sidebar-btn" aria-label="Ver Histórico">
+                        <i class="fas fa-history" aria-hidden="true"></i>
+                        <span class="sidebar-text">Histórico</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btnExportar" class="sidebar-btn" aria-label="Exportar CSV">
+                        <i class="fas fa-file-export" aria-hidden="true"></i>
+                        <span class="sidebar-text">Exportar CSV</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btnExportarPDF" class="sidebar-btn" aria-label="Exportar PDF">
+                        <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                        <span class="sidebar-text">Exportar PDF</span>
+                    </button>
+                </li>
+                <li>
+                    <button id="btnTema" class="sidebar-btn" aria-label="Alternar Tema">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <span class="sidebar-text">Alternar Tema</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-    <div class="main-content">
-        <!-- Filtros de pesquisa -->
-        <section class="filtros">
-            <input type="text" id="pesquisa" placeholder="Pesquisar por material..." />
-        </section>
+    <!-- Botão de notificações -->
+    <button id="btnNotificacoes" class="notificacao-btn" aria-label="Notificações">
+        <i class="fas fa-bell"></i>
+        <span id="notificacaoContador" class="notificacao-contador">0</span>
+    </button>
 
-        <!-- Tabela de Estoque -->
-        <section class="estoque-table">
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <header>
+            <h1>Controle de Estoque</h1>
+            <form role="search">
+                <label for="pesquisa" class="sr-only">Pesquisar material</label>
+                <input type="text" id="pesquisa" placeholder="Digite o nome do material..." aria-label="Pesquisar material">
+            </form>
+        </header>
+
+        <!-- Tabela de estoque -->
+        <section class="estoque-table" aria-labelledby="estoque-caption">
             <table>
+                <caption id="estoque-caption">Lista de materiais em estoque</caption>
                 <thead>
                     <tr>
-                        <th>Material</th>
-                        <th>Quantidade</th>
-                        <th>Entrada de Dados</th>
-                        <th>Quantidade Entrada</th>
-                        <th>Saída de Dados</th>
-                        <th>Quantidade de Saída</th>
-                        <th>Ações</th> <!-- Coluna de ações (Editar/Excluir) -->
+                        <th scope="col">Material</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Última Entrada</th>
+                        <th scope="col">Qtd Entrada</th>
+                        <th scope="col">Última Saída</th>
+                        <th scope="col">Qtd Saída</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
-                <tbody id="tabela-estoque">
-                    <!-- Itens serão carregados dinamicamente aqui -->
-                </tbody>
+                <tbody id="tabela-estoque"></tbody>
             </table>
         </section>
-    </div>
+    </main>
 
-    <!-- Modal de Adicionar Item -->
-    <div id="modalAdicionar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal('modalAdicionar')">&times;</span>
-            <h2>Adicionar Item</h2>
-            <form id="formAdicionar">
-                <label for="material">Material:</label>
-                <input type="text" id="material" required>
+    <!-- Container de Modais -->
+    <div id="modalContainer" role="dialog" aria-modal="true" aria-hidden="true">
+        <!-- Modal de Histórico -->
+        <div id="historicoContainer" class="modal">
+            <div class="modal-content">
+                <button class="close" aria-label="Fechar modal">&times;</button>
+                <h2>Histórico de Alterações</h2>
+                <div id="historico-lista"></div>
+            </div>
+        </div>
 
-                <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" required>
+        <!-- Modal de Editar Item -->
+        <div id="modalEditar" class="modal">
+            <div class="modal-content">
+                <button class="close" aria-label="Fechar modal">&times;</button>
+                <h2>Editar Item</h2>
+                <form id="formEditar">
+                    <div class="form-group">
+                        <label for="materialEditar">Material:</label>
+                        <input type="text" id="materialEditar" required aria-label="Editar material">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidadeEditar">Quantidade:</label>
+                        <input type="number" id="quantidadeEditar" required min="1" aria-label="Editar quantidade">
+                    </div>
+                    <div class="botoes-modal">
+                        <button type="button" class="btn-cancelar" aria-label="Cancelar edição">Cancelar</button>
+                        <button type="submit" aria-label="Salvar alterações">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-                <label for="quantidadeEntrada">Quantidade Entrada:</label>
-                <input type="number" id="quantidadeEntrada">
+        <!-- Modal de Adicionar Item -->
+        <div id="modalAdicionar" class="modal">
+            <div class="modal-content">
+                <button class="close" aria-label="Fechar modal">&times;</button>
+                <h2>Adicionar Item</h2>
+                <form id="formAdicionar">
+                    <div class="form-group">
+                        <label for="material">Material:</label>
+                        <input type="text" id="material" required aria-label="Nome do material">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" id="quantidade" required min="1" aria-label="Quantidade do material">
+                    </div>
+                    <button type="submit" aria-label="Adicionar item">Adicionar</button>
+                </form>
+            </div>
+        </div>
 
-                <label for="quantidadeSaida">Quantidade Saída:</label>
-                <input type="number" id="quantidadeSaida">
+        <!-- Modal de Registrar Entrada -->
+        <div id="modalEntrada" class="modal">
+            <div class="modal-content">
+                <button class="close" aria-label="Fechar modal">&times;</button>
+                <h2>Registrar Entrada</h2>
+                <form id="formEntrada">
+                    <div class="form-group">
+                        <label for="materialEntrada">Material:</label>
+                        <select id="materialEntrada" required aria-label="Selecionar material para entrada">
+                            <option value="">Selecione um material</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidadeEntrada">Quantidade Entrada:</label>
+                        <input type="number" id="quantidadeEntrada" required min="1" aria-label="Quantidade de entrada">
+                    </div>
+                    <button type="submit" aria-label="Registrar entrada">Registrar</button>
+                </form>
+            </div>
+        </div>
 
-                <button type="submit">Adicionar</button>
-            </form>
+        <!-- Modal de Registrar Saída -->
+        <div id="modalSaida" class="modal">
+            <div class="modal-content">
+                <button class="close" aria-label="Fechar modal">&times;</button>
+                <h2>Registrar Saída</h2>
+                <form id="formSaida">
+                    <div class="form-group">
+                        <label for="materialSaida">Material:</label>
+                        <select id="materialSaida" required aria-label="Selecionar material para saída">
+                            <option value="">Selecione um material</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidadeSaida">Quantidade Saída:</label>
+                        <input type="number" id="quantidadeSaida" required min="1" aria-label="Quantidade de saída">
+                    </div>
+                    <button type="submit" aria-label="Registrar saída">Registrar</button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <!-- Modal de Entrada -->
-    <div id="modalEntrada" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal('modalEntrada')">&times;</span>
-            <h2>Registrar Entrada</h2>
-            <form id="formEntrada">
-                <label for="materialEntrada">Material:</label>
-                <input type="text" id="materialEntrada" required>
-
-                <label for="quantidadeEntrada">Quantidade Entrada:</label>
-                <input type="number" id="quantidadeEntrada" required>
-
-                <button type="submit">Registrar</button>
-            </form>
-        </div>
+    <!-- Notificações -->
+    <div id="notificacoesContainer" class="notificacoes-container">
+        <h2>Notificações</h2>
+        <ul id="notificacoesLista"></ul>
     </div>
 
-    <!-- Modal de Saída -->
-    <div id="modalSaida" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal('modalSaida')">&times;</span>
-            <h2>Registrar Saída</h2>
-            <form id="formSaida">
-                <label for="materialSaida">Material:</label>
-                <input type="text" id="materialSaida" required>
+    <!-- Mensagens -->
+    <div id="mensagem" class="mensagem" role="alert"></div>
 
-                <label for="quantidadeSaida">Quantidade Saída:</label>
-                <input type="number" id="quantidadeSaida" required>
-
-                <button type="submit">Registrar</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal de Edição -->
-    <div id="modalEditar" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal('modalEditar')">&times;</span>
-            <h2>Editar Item</h2>
-            <form id="formEditar">
-                <label for="materialEditar">Material:</label>
-                <input type="text" id="materialEditar" required>
-
-                <label for="quantidadeEditar">Quantidade:</label>
-                <input type="number" id="quantidadeEditar" required>
-
-                <label for="quantidadeEntradaEditar">Quantidade Entrada:</label>
-                <input type="number" id="quantidadeEntradaEditar">
-
-                <label for="quantidadeSaidaEditar">Quantidade Saída:</label>
-                <input type="number" id="quantidadeSaidaEditar">
-
-                <button type="submit">Alterar</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Importação dos Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/dom.js" type="module"></script>
+    <script src="js/api.js" type="module"></script>
+    <script src="js/estoque.js" type="module"></script>
+    <script src="js/historico.js" type="module"></script>
+    <script src="js/exportacao.js" type="module"></script>
+    <script src="js/tema.js" type="module"></script>
 </body>
 </html>

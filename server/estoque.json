@@ -1,0 +1,452 @@
+[
+    {
+        "id": "1740750615087",
+        "material": "Agendamento",
+        "quantidade": 47,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740750631804",
+        "material": "Almofada para Carimbo Azul",
+        "quantidade": 1,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750643763",
+        "material": "Atestado",
+        "quantidade": 49,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 5
+    },
+    {
+        "id": "1740750660347",
+        "material": "Bobina Grande 80mm x 40m",
+        "quantidade": 28,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 2
+    },
+    {
+        "id": "1740750674491",
+        "material": "Bobina Pequena 56mm x 15m",
+        "quantidade": 23,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "05/03/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740750698707",
+        "material": "Bobina Ponto 57mm x 300m",
+        "quantidade": 4,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750712162",
+        "material": "Bolacha",
+        "quantidade": 5,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750733906",
+        "material": "Caderno de Anotação",
+        "quantidade": 2,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750750806",
+        "material": "Caneta Azul",
+        "quantidade": 12,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740750760919",
+        "material": "Caneta Preta",
+        "quantidade": 21,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750776278",
+        "material": "Caneta Vermelha",
+        "quantidade": 40,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750791346",
+        "material": "Cardiologia",
+        "quantidade": 14,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 3
+    },
+    {
+        "id": "1740750827586",
+        "material": "Coleta de Exames",
+        "quantidade": 95,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750878233",
+        "material": "Declaração de Comparecimento",
+        "quantidade": 41,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750983265",
+        "material": "Ecocardiograma",
+        "quantidade": 27,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740750996592",
+        "material": "Eletrocardiograma",
+        "quantidade": 26,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751017608",
+        "material": "Eletroencefalograma (EEG)",
+        "quantidade": 93,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751056288",
+        "material": "Encaminhamento Cirúrgico de Catarata",
+        "quantidade": 23,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751070436",
+        "material": "Envelope p/bloco de 100 uni",
+        "quantidade": 8,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751085591",
+        "material": "Envelope Pequeno p/Caixa com 1000",
+        "quantidade": 3,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751119216",
+        "material": "Exame PSA",
+        "quantidade": 35,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751139040",
+        "material": "Exame Papanicolau",
+        "quantidade": 32,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740751159039",
+        "material": "Fisioterapia e Acupuntura",
+        "quantidade": 10,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740751171007",
+        "material": "Fita Durex",
+        "quantidade": 3,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751185227",
+        "material": "Geriatria",
+        "quantidade": 1,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751218510",
+        "material": "Grampo",
+        "quantidade": 15,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "05/03/2025",
+        "qtdSaida": 1
+    },
+    {
+        "id": "1740751229982",
+        "material": "Luvas Latex G",
+        "quantidade": 1,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751242814",
+        "material": "Luvas Latex M",
+        "quantidade": 48,
+        "ultimaEntrada": "05/03/2025",
+        "qtdEntrada": 40,
+        "ultimaSaida": "07/03/2025",
+        "qtdSaida": 1
+    },
+    {
+        "id": "1740751265278",
+        "material": "Luvas Latex P",
+        "quantidade": 81,
+        "ultimaEntrada": "05/03/2025",
+        "qtdEntrada": 80,
+        "ultimaSaida": "08/03/2025",
+        "qtdSaida": 2
+    },
+    {
+        "id": "1740751286326",
+        "material": "Marca texto Amarelo",
+        "quantidade": 4,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 2
+    },
+    {
+        "id": "1740751297958",
+        "material": "Marca texto laranja",
+        "quantidade": 4,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 1
+    },
+    {
+        "id": "1740751306357",
+        "material": "Mouse",
+        "quantidade": 2,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751319677",
+        "material": "Orçamento Odontológico",
+        "quantidade": 10,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751332461",
+        "material": "Pediatria",
+        "quantidade": 34,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751345781",
+        "material": "Prescrição de Óculos p/uni",
+        "quantidade": 426,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751358853",
+        "material": "Prontuário Médico",
+        "quantidade": 45,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 5
+    },
+    {
+        "id": "1740751375589",
+        "material": "Receituário",
+        "quantidade": 44,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740751389917",
+        "material": "Receituário Controle Especial",
+        "quantidade": 44,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 7
+    },
+    {
+        "id": "1740751404149",
+        "material": "Retiradas de Exames",
+        "quantidade": 3,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751415149",
+        "material": "Sangria",
+        "quantidade": 15,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 6
+    },
+    {
+        "id": "1740751425101",
+        "material": "Sol. De Exames Médicos Form 1",
+        "quantidade": 23,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 4
+    },
+    {
+        "id": "1740751444781",
+        "material": "Sol. De Procedimentos form 2",
+        "quantidade": 50,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751475437",
+        "material": "Sulfite A4",
+        "quantidade": 89,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "05/03/2025",
+        "qtdSaida": 3
+    },
+    {
+        "id": "1740751489709",
+        "material": "Teclado",
+        "quantidade": 2,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751496793",
+        "material": "Tesoura Ergonomica c.Preto",
+        "quantidade": 1,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751506521",
+        "material": "Tesoura Uso Geral",
+        "quantidade": 0,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "28/02/2025",
+        "qtdSaida": 1
+    },
+    {
+        "id": "1740751518749",
+        "material": "Teste Ergométrico",
+        "quantidade": 57,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1740751533268",
+        "material": "Ultrassonografia",
+        "quantidade": 14,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "05/03/2025",
+        "qtdSaida": 10
+    },
+    {
+        "id": "1741183728570",
+        "material": "Luvas Nitricas M",
+        "quantidade": 7,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": null,
+        "qtdSaida": null
+    },
+    {
+        "id": "1741176834132",
+        "material": "Exame Laboratoriais",
+        "quantidade": 49,
+        "ultimaEntrada": null,
+        "qtdEntrada": null,
+        "ultimaSaida": "05/03/2025",
+        "qtdSaida": 10
+    }
+]

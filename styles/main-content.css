@@ -1,0 +1,132 @@
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    margin-left: 0; /* Ajustado para sidebar escondida por padrão */
+    background-color: var(--cor-fundo);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    transition: margin-left 0.3s ease;
+}
+
+/* Ajuste quando a sidebar está ativa */
+.sidebar.active ~ .main-content {
+    margin-left: 250px; /* Espaço para a sidebar */
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: var(--cor-primaria);
+}
+
+/* Formulário de pesquisa */
+header form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header input[type="text"] {
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header input[type="text"]:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 111, 61, 0.5);
+}
+
+/* Tabela de estoque */
+.estoque-table {
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra);
+    overflow-x: auto;
+}
+
+.estoque-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.estoque-table th,
+.estoque-table td {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    text-align: center;
+}
+
+.estoque-table th {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+}
+
+.estoque-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fundo alternado para linhas */
+}
+
+.estoque-table tr:hover {
+    background-color: #f1f1f1; /* Efeito hover nas linhas */
+}
+
+/* Botões de ação na tabela */
+.btn-editar,
+.btn-remover {
+    background: none;
+    border: none;
+    padding: 6px;
+    margin: 0 4px;
+    cursor: pointer;
+    color: var(--cor-primaria);
+    transition: var(--transicao);
+    font-size: 1.2rem;
+}
+
+.btn-remover {
+    color: var(--cor-perigo); /* Vermelho */
+}
+
+.btn-editar:hover {
+    color: #E65A2B; /* Laranja mais escuro */
+}
+
+.btn-remover:hover {
+    color: #C0392B; /* Vermelho mais escuro */
+}
+
+/* Níveis de estoque */
+.nivel-bom {
+    background-color: #2EF35C; /* Verde */
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--raio-borda);
+}
+
+.nivel-medio {
+    background-color: #F7CF4E; /* Amarelo */
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--raio-borda);
+}
+
+.nivel-critico {
+    background-color: var(--cor-perigo); /* Vermelho */
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--raio-borda);
+}
